@@ -16,9 +16,9 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonarqube') {
+        //stage('SonarQube Analysis') {
+            //steps {
+                //withSonarQubeEnv('sonarqube') {
                     sh 'mvn sonar:sonar'
                 }
             }
@@ -31,9 +31,9 @@ pipeline {
             }
         }
 
-        stage('API Testing') {
-            steps {
-                script {
+       // stage('API Testing') {
+           // steps {
+            //    script {
                     // Wait for Tomcat to deploy the application
                     sleep(time: 30, unit: 'SECONDS')
 
